@@ -1,15 +1,18 @@
 import pandas as pd
 import os
 from loguru import logger
+from dotenv import load_dotenv
 
-RAW_DATA_PATH = "data/raw_countries.json"
-PROCESSED_DATA_PATH = "data/processed_countries.csv"
+# Load environment variables
+load_dotenv()
+
+RAW_DATA_PATH = os.getenv("RAW_DATA_PATH", "data/raw_countries.json")
+PROCESSED_DATA_PATH = os.getenv("PROCESSED_DATA_PATH", "data/processed_countries.csv")
 
 def transform():
     logger.info("Starting transformation...")
 
     df = pd.read_json(RAW_DATA_PATH)
-
     logger.info(f"Raw data shape: {df.shape}")
 
     # Extract only the fields we need

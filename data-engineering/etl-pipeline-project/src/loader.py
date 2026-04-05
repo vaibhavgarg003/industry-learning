@@ -1,9 +1,14 @@
 import pandas as pd
 from sqlalchemy import create_engine
 from loguru import logger
+from dotenv import load_dotenv
+import os
 
-PROCESSED_DATA_PATH = "data/processed_countries.csv"
-DATABASE_PATH = "data/countries.db"
+# Load environment variables
+load_dotenv()
+
+PROCESSED_DATA_PATH = os.getenv("PROCESSED_DATA_PATH", "data/processed_countries.csv")
+DATABASE_PATH = os.getenv("DATABASE_PATH", "data/countries.db")
 
 def load():
     logger.info("Starting loading phase...")
