@@ -1,0 +1,17 @@
+2026-04-06 04:33:21.381 | INFO     | __main__:run_pipeline:16 - ==================================================
+2026-04-06 04:33:21.382 | INFO     | __main__:run_pipeline:17 - ETL PIPELINE STARTED
+2026-04-06 04:33:21.382 | INFO     | __main__:run_pipeline:18 - ==================================================
+2026-04-06 04:33:21.383 | INFO     | __main__:run_pipeline:21 - STEP 1: EXTRACT
+2026-04-06 04:33:21.383 | INFO     | extractor:extract:10 - Starting extraction from REST Countries API...
+2026-04-06 04:33:23.799 | SUCCESS  | extractor:extract:21 - Extracted 195 countries and saved to data/raw_countries.json
+2026-04-06 04:33:23.801 | INFO     | __main__:run_pipeline:28 - STEP 2: TRANSFORM
+2026-04-06 04:33:23.802 | INFO     | transformer:transform:9 - Starting transformation...
+2026-04-06 04:33:23.840 | INFO     | transformer:transform:13 - Raw data shape: (195, 35)
+2026-04-06 04:33:23.849 | SUCCESS  | transformer:transform:37 - Transformed 195 countries and saved to data/processed_countries.csv
+2026-04-06 04:33:23.851 | INFO     | __main__:run_pipeline:35 - STEP 3: LOAD
+2026-04-06 04:33:23.851 | INFO     | loader:load:9 - Starting loading phase...
+2026-04-06 04:33:23.865 | INFO     | loader:load:13 - Loaded 195 rows from data/processed_countries.csv
+2026-04-06 04:33:23.908 | SUCCESS  | loader:load:26 - Loaded 195 countries into data/countries.db -> table: countries
+2026-04-06 04:33:23.909 | INFO     | __main__:run_pipeline:38 - ==================================================
+2026-04-06 04:33:23.909 | SUCCESS  | __main__:run_pipeline:39 - ETL PIPELINE COMPLETED SUCCESSFULLY
+2026-04-06 04:33:23.909 | INFO     | __main__:run_pipeline:40 - ==================================================
