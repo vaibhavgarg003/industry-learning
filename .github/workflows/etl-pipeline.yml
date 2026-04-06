@@ -1,0 +1,39 @@
+name: ETL Pipeline CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          cd data-engineering/etl-pipeline-project
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Create .env file
+        run: |
+          cd data-engineering/etl-pipeline-project
+          echo "API_URL=https://restcountries.com/v3.1/independent?status=true" >> .env
+          echo "DATABASE_PATH=data/countries.db" >> .env
+          echo "PROCESSED_DATA_PATH=data/processed_countries.csv" >> .env
+          echo "RAW_DATA_PATH=data/raw_countries.json" >> .env
+
+      - name: Run tests
+        run: |
+          cd data-engineering/etl-pipeline-project
+          pytest tests/ -v
