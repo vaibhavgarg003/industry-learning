@@ -131,9 +131,15 @@ Total: 15 passed
 
 ---
 
-## 🔜 Upcoming Improvements
+## ✅ Completed
+- [x] ETL Pipeline — fully working end to end
+- [x] 15 unit tests — all passing
+- [x] Dockerized — runs anywhere
+- [x] GitHub Actions CI/CD — tests auto-run on every push
+- [x] Security-first design with .env
 
+## 🔜 Upcoming Improvements
 - [ ] Schedule pipeline with Apache Airflow
 - [ ] Move to cloud storage (AWS S3)
 - [ ] Add incremental loading for large datasets
-- [ ] Add GitHub Actions for CI/CD
+- [ ] ML/AI project track — coming in v2.0.0
