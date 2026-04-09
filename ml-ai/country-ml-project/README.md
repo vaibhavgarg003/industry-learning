@@ -142,6 +142,23 @@ jupyter notebook notebooks/exploration.ipynb
 
 ---
 
+
+## 🧪 Test Results
+tests/test_models.py
+test_load_data_returns_dataframe          ✅
+test_load_data_correct_shape              ✅
+test_load_data_no_nulls                   ✅
+test_load_data_correct_columns            ✅
+test_prepare_features_returns_correct_shape ✅
+test_train_clustering_returns_clusters    ✅
+test_train_clustering_no_nulls_in_clusters ✅
+test_prepare_pred_features_correct_shape  ✅
+test_linear_regression_trains             ✅
+test_random_forest_trains                 ✅
+Total: 10 passed ✅
+
+---
+
 ## 🔜 Future Improvements
 
 - [ ] Try with a larger dataset (World Bank data)
