@@ -1,12 +1,12 @@
-# Environment variables - never commit secrets
+# Environment variables
 .env
 
-# Generated data files - too large for Git
+# Generated data files
 data/*.json
 data/*.csv
 data/*.db
 
-# Logs - generated every run
+# Logs
 logs/*.log
 
 # Python cache
@@ -17,5 +17,8 @@ __pycache__/
 # pytest cache
 .pytest_cache/
 
-# VS Code settings
+# VS Code
 .vscode/
+
+# Sample files to keep
+!data/samples/

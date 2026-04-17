@@ -8,15 +8,34 @@ from a REST API, transforming it with Pandas, and loading into SQLite.
 ## 🏗️ Architecture
 REST Countries API
 ↓
-[Extractor]  → Fetches 195 countries, saves raw JSON
+[Extractor]   → Fetches 195 countries, saves raw JSON
 ↓
 [Transformer] → Cleans data, adds population density
 ↓
-[Loader]     → Saves clean data into SQLite database
+[Loader]      → Saves clean data into SQLite database
 ↓
-[Logger]     → Logs every step to file and terminal
+[S3 Uploader] → Uploads cleaned CSV to AWS S3 ☁️
+↓
+[Logger]      → Logs every step to file and terminal
 
----
+Find the **Tech Stack section** and add:
+````markdown
+- **AWS S3** — Cloud storage for processed data
+- **boto3** — AWS Python SDK
+````
+
+Find the **How to Run section** and update step 4:
+````markdown
+### 4. Run the full pipeline
+```bash
+python src/pipeline.py
+```
+This will:
+- Extract 195 countries from REST API
+- Transform and clean the data
+- Load into SQLite database
+- Upload cleaned CSV to AWS S3
+````
 
 ## 🔐 Security Decisions
 
@@ -129,6 +148,7 @@ Total: 15 passed ✅
 - [x] Dockerized — runs anywhere
 - [x] GitHub Actions CI/CD — tests auto-run on every push
 - [x] Security-first design with .env
+- [x] AWS S3 integration — data uploaded to cloud after every run
 
 ## 🔜 Upcoming Improvements
 
