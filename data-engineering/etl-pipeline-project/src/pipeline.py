@@ -2,13 +2,12 @@ from loguru import logger
 from extractor import extract
 from transformer import transform
 from loader import load
+from s3_uploader import upload_to_s3
 import sys
 import os
 
-# Add src to path
 sys.path.append(os.path.dirname(__file__))
 
-# Log to file
 os.makedirs("logs", exist_ok=True)
 logger.add("logs/pipeline_{time:YYYY-MM-DD}.log", rotation="1 day", retention="7 days")
 
@@ -34,6 +33,10 @@ def run_pipeline():
     # Step 3: Load
     logger.info("STEP 3: LOAD")
     load()
+
+    # Step 4: Upload to S3
+    logger.info("STEP 4: UPLOAD TO S3")
+    upload_to_s3()
 
     logger.info("=" * 50)
     logger.success("ETL PIPELINE COMPLETED SUCCESSFULLY")
