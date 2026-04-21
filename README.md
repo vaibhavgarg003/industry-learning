@@ -77,3 +77,18 @@ and honest documentation — not copy-pasted tutorials.
 - **LinkedIn:** [linkedin.com/in/vaibhavgarg003](https://linkedin.com/in/vaibhavgarg003)
 - **GitHub:** [github.com/vaibhavgarg003](https://github.com/vaibhavgarg003)
 - **Email:** vaibhavgargindia01@gmail.com
+
+## ⚡ Project 3 — ATM Analytics Pipeline ✅
+
+A production-grade PySpark pipeline processing 10,000 ATM transactions —
+built to demonstrate hands-on PySpark skills for a Data Engineer role.
+
+| Highlight | Detail |
+|---|---|
+| Data | 10,000 realistic ATM transactions generated |
+| PySpark | Transformations, analytics, partitioning, Parquet |
+| Tests | 12 unit tests — all passing |
+| CI/CD | GitHub Actions — tests auto-run on every push |
+| Containerization | Fully Dockerized |
+
+👉 [View Full ATM Pipeline Project →](https://github.com/vaibhavgarg003/industry-learning/blob/main/data-engineering/atm-analytics-pipeline/README.md)
